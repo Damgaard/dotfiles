@@ -1,0 +1,38 @@
+# Global Ignore Files #
+#######################
+
+# Python #
+##########
+
+*.py[co]
+_build/
+build/
+dist/
+*.egg
+*.egg-info/
+virtualenv/
+
+# Sphinx Build docs #
+#####################
+
+docs/_build/
+
+# Compiled C #
+##############
+
+*.o
+*.hi
+
+# Vim #
+#######
+
+*.swp
+*~
+
+# Other #
+#########
+
+*.exe
+authentication.*
+.ropeproject/
+node_modules/
