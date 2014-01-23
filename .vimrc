@@ -1,6 +1,5 @@
-" ################
-" General Settings
-" ################
+" General Settings {{{
+" ####################
 
 " No need to be compatible with ancient software
 set nocompatible
@@ -32,9 +31,9 @@ set paste
 " Only Check final line for file-specific settings
 set modelines=1
 
-" ######
-" Visual
-" ######
+" }}}
+" Visual {{{
+" ##########
 
 colorscheme torte
 
@@ -69,7 +68,10 @@ set statusline=%{fugitive#statusline()}
 " Keep more lines visible while scrolling down
 set scrolloff=5
 
-" Spelling
+" }}}
+" Spelling {{{
+" ############
+
 " set spell
 nmap <silent> <leader>s :set spell!<CR>
 
@@ -78,9 +80,9 @@ nmap <silent> <leader>s :set spell!<CR>
 set cindent
 " im :<CR> :<CR><TAB>
 
-" ######
-" Search
-" ######
+" }}}
+" Search {{{
+" ##########
 
 " Make search/replace global by default
 set gdefault
@@ -136,9 +138,9 @@ map <C-Enter> i<Enter><ESC>
 " in addition to ()
 runtime macros/matchit.vim
 
-" ##########
-" Navigation
-" ##########
+" }}}
+" Navigation {{{
+" ##############
 
 " Faster go to tab left of current. Holding shift is really inconvenient
 nnoremap gr gT
@@ -176,9 +178,9 @@ augroup END
 nnoremap <bs> hx
 set backspace=start,indent,eol
 
-" ###############
-" Quality of Life
-" ###############
+" }}}
+" Quality of Life {{{
+" ###################
 
 " Common mistyping, saves rage
 nnoremap ; :
@@ -204,9 +206,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" ####################
-" Plugin Configuration
-" ####################
+" }}}
+" Plugin Configuration {{{
+" ########################
 
 let g:pymode_rope = 0
 
@@ -320,8 +322,16 @@ set sw=2
 " all the figure labels. Very useful!
 set iskeyword+=:
 
+" }}}
+" Enable local settings {{{
+" #########################
+
 " Load Custom per-directory vim configuration.
 " All credit to this SO answer http://stackoverflow.com/a/1889646/1368070
 if filereadable(".vim.custom")
     so .vim.custom
 endif
+
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
