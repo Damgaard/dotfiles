@@ -29,6 +29,9 @@ set ttyfast
 " Pasting is good
 set paste
 
+" Only Check final line for file-specific settings
+set modelines=1
+
 " ######
 " Visual
 " ######
@@ -46,6 +49,16 @@ set cursorline
 
 " Allows vim to handle multiple buffers at the same time
 set hidden
+
+" Visual autocomplete for command menu
+set wildmenu
+
+" Redraw only when we need to
+" Vim loves to redraw the screen during things it probably doesn't need to—like
+" in the middle of macros. This tells Vim not to bother redrawing during these
+" scenarios, leading to faster macros.
+" - http://dougblack.io/words/a-good-vimrc.html
+set lazyredraw
 
 " Add line number on left side.
 set number
@@ -227,6 +240,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Allow collapsing of code
 set foldmethod=indent
 set foldlevel=99
+" Remap space to open/close folds. This is mainly to try and encourge myself
+" to use folds more.
+nnoremap <space> za
 
 " Standard save method. Simpler and shorter
 map <c-s> :w<CR>
