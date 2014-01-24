@@ -106,6 +106,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Add autojump
+source /usr/share/autojump/autojump.bash
+
 # Yeah I'm stupid.
 alias æs='ls'
 alias sl='ls'
