@@ -53,7 +53,6 @@ colorscheme torte
 set showmode
 set showcmd
 set laststatus=2
-set colorcolumn=80
 
 " Show the line we're currently on
 set cursorline
@@ -86,11 +85,6 @@ set scrolloff=5
 
 " set spell
 nmap <silent> <leader>s :set spell!<CR>
-
-" Filetype specific
-" Correct auto-indentation for C and Python
-set cindent
-" im :<CR> :<CR><TAB>
 
 " }}}
 " Search {{{
@@ -131,11 +125,7 @@ set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer relod
 set noswapfile
 
-" au FileType haskell iabbrev != /=
 
-" For easy reformatting of lines within the correct number of lines.
-" Use gq on a visual selected number of lines
-set tw=79
 
 " keep visual selection after indenting
 vmap > >gv
@@ -194,6 +184,25 @@ nnoremap <bs> hx
 set backspace=start,indent,eol
 
 " }}}
+" Language Specific {{{
+" #####################
+
+" Correct auto-indentation for C and Python
+set cindent
+
+" Set colourcolumn for python (PEP8) and reStructed text files which are
+" mainly used for documenting python projects.
+autocmd BufNewFile,BufRead *.py,*.rst setlocal colorcolumn=80
+
+" For easy reformatting of lines within the correct number of lines.
+" Use gq on a visual selected number of lines
+autocmd BufNewFile,BufRead *.py setlocal tw=79
+
+" Use <leader>c to save and compile various types of documents
+autocmd FileType tex map <buffer> <leader>c :w<CR>:!xelatex -shell-escape %<CR>
+autocmd FileType rst map <buffer> <leader>c :w<CR>:!rst2pdf %<CR>
+
+" }}}
 " Quality of Life {{{
 " ###################
 
@@ -227,29 +236,6 @@ autocmd BufWinLeave * call clearmatches()
 
 let g:pymode_rope = 0
 
-" Use easier commands for python-modes movement up/down method/functions.
-" This is may give unintended results if python-mode is no installed.
-" There probably is a bit better way to directly modify python-modes
-" commands.
-autocmd BufNewFile,BufRead *.py map <silent> (( [M
-autocmd BufNewFile,BufRead *.py map <silent> )) ]M
-
-" Auto commands
-" Abbreviations
-" Block comments by filetype
-autocmd BufNewFile,BufRead *.py abbreviate #b ########################
-autocmd BufNewFile,BufRead *.py abbreviate #t import pdb; pdb.set_trace()
-autocmd BufNewFile,BufRead *.c,*.h abbreviate #b /* ########################
-autocmd BufNewFile,BufRead *.c,*.h abbreviate #e <space><space><space>######################## */
-
-autocmd BufNewFile,BufRead *.py abbreviate #i import
-autocmd BufNewFile,BufRead *.c,*.h abbreviate #i #include
-autocmd BufNewFile,BufRead *.c,*.h abbreviate #d #define
-
-autocmd BufNewFile,BufRead *.c,*.h abbreviate #m int main(int argc, char **args)
-
-autocmd BufNewFile,Bufread *.py nmap <silent> <leader>c 0i#<Esc>
-
 " quickly edit/reload the .vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -263,12 +249,6 @@ nnoremap <space> za
 
 " Standard save method. Simpler and shorter
 map <c-s> :w<CR>
-
-" Save and recompile latex document
-map <c-x> :w<CR>:!xelatex -shell-escape %<CR>
-
-" Save and recompile reStructed document
-map <c-l> :w<CR>:!rst2pdf %<CR>
 
 " Add Omnicomplete for Python Code
 au FileType python set omnifunc=pythoncomplete#Complete
