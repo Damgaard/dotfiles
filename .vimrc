@@ -173,6 +173,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Disable Ex mode
+map Q <NOP>
+
 " Set cursor to the position it had when file was closed
 function! ResCur()
   if line("'\"") <= line("$")
