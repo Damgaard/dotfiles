@@ -201,6 +201,14 @@ autocmd BufNewFile,BufRead *.py,*.rst setlocal colorcolumn=80
 " Use gq on a visual selected number of lines
 autocmd BufNewFile,BufRead *.py setlocal tw=79
 
+" The unofficial style conventions for git commit messages are that headers
+" should be 50 chars or under, followed by an empty line and then a body
+" which is wrapped at 70 chars. To help follow these conventions vim colors
+" characters on the first line differently after the first 50 chars. This
+" adds a colorcolumn at coloumn 70 to help keeping git message bodies within
+" the limits.
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=70.
+
 " Use <leader>c to save and compile various types of documents
 autocmd FileType tex map <buffer> <leader>c :w<CR>:!xelatex -shell-escape %<CR>
 autocmd FileType rst map <buffer> <leader>c :w<CR>:!rst2pdf %<CR>
