@@ -31,6 +31,9 @@ set encoding=utf-8
 " Activate mouse
 set mouse=a
 
+" Show title of file we are editing
+set title
+
 " No sound thank you very much
 set vb
 
