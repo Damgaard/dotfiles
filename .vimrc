@@ -79,6 +79,8 @@ set number
 " Show current git branch in statusline.
 set statusline=%{fugitive#statusline()}
 
+hi TabLineSel ctermfg=Red
+
 " Keep more lines visible while scrolling down
 set scrolloff=5
 
