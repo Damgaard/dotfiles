@@ -7,3 +7,5 @@
 	autocrlf = input
 [help]
 	autocorrect = 1
+[color]
+	ui = true
