@@ -158,6 +158,7 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Move by lines as seen in editor rather than as in file
+" Extremely useful for formats like json without newlines.
 map j gj
 map k k
 
@@ -171,7 +172,7 @@ noremap <Right> <NOP>
 map Q <NOP>
 
 " Disable K doing man lookups
-map Q <NOP>
+map K <NOP>
 
 " Set cursor to the position it had when file was closed
 function! ResCur()
@@ -211,7 +212,7 @@ autocmd BufNewFile,BufRead *.py setlocal tw=79
 " characters on the first line differently after the first 50 chars. This
 " adds a colorcolumn at coloumn 70 to help keeping git message bodies within
 " the limits.
-autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=70.
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=70
 
 " Use <leader>c to save and compile various types of documents
 autocmd FileType tex map <buffer> <leader>c :w<CR>:!xelatex -shell-escape %<CR>
@@ -249,8 +250,6 @@ autocmd BufWinLeave * call clearmatches()
 " Plugin Configuration {{{
 " ########################
 
-let g:pymode_rope = 0
-
 " quickly edit/reload the .vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -258,6 +257,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Allow collapsing of code
 set foldmethod=indent
 set foldlevel=99
+
 " Remap space to open/close folds. This is mainly to try and encourge myself
 " to use folds more.
 nnoremap <space> za
@@ -276,7 +276,9 @@ map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
 " Ignore these files when searching for files, such as with tabnew
-:set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*~,*.png,*.PNG,*.jpg,*.JPG,*.gif,*.GIF,*.hi,*.pdf,*.aux
+set wildignore+=*.o,*.obj,*.bak,*.exe,*~,*.png,*.PNG,*.jpg,*.JPG,*.gif,*.GIF
+set wildignore+=*.hi,*.pdf,*.aux
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt) & Ben Orenstein
@@ -300,12 +302,17 @@ map <leader>n :call RenameFile()<cr>
 " on libraries with several classes that exceed the recommended complexity,
 " these errors will obscure easily fixed errors such as unused variables.
 " Use radon instead to detect these errors when needed.
+let g:pymode_rope = 0
 let g:pymode_lint_ignore = "C901"
+let g:pymode_doc_key = ",d"
+
+map K [M
+map J ]M
 
 " VIM-LATEX
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin on
+" filetype plugin on
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -315,9 +322,6 @@ set shellslash
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.

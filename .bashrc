@@ -106,12 +106,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+################
+# Custom changes
+################
+
 # Add autojump
 source /usr/share/autojump/autojump.bash
 
 # Yeah I'm stupid.
 alias æs='ls'
 alias sl='ls'
+alias ks='ls'
 
 # Convenience commands
 alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm'
@@ -121,6 +126,7 @@ alias tk='python ~/keepcalm/manage.py test keepcalm'
 alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
 
 alias act="if [ -d virtualenv ]; then source virtualenv/bin/activate; elif [ -d restricted/virtualenv ]; then source restricted/virtualenv/bin/activate; else echo 'No virtualenv'; fi"
+alias deact="deactivate"
 
 # Run the
 PYTHONSTARTUP=~/.pythonrc.py
