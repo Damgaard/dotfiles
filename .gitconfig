@@ -5,3 +5,5 @@
 	excludesfile = .cvsignore
 	editor = vim
 	autocrlf = input
+[help]
+	autocorrect = 1
