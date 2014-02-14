@@ -122,6 +122,7 @@ alias ks='ls'
 alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm'
 alias tk='python ~/keepcalm/manage.py test keepcalm'
 alias g='git'
+alias hs='python -m SimpleHTTPServer'
 
 # Convenient silent eclipse
 alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
