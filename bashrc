@@ -130,6 +130,12 @@ alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &
 alias act="if [ -d virtualenv ]; then source virtualenv/bin/activate; elif [ -d restricted/virtualenv ]; then source restricted/virtualenv/bin/activate; else echo 'No virtualenv'; fi"
 alias deact="deactivate"
 
+alias ..='cd ..'
+alias ...='cd .../..'
+alias ....='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../../..'
+
 # Run the
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
