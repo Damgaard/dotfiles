@@ -2,7 +2,7 @@
 	name = Andreas Damgaard Pedersen
 	email = andreas.damgaard.pedersen@gmail.com
 [core]
-	excludesfile = .cvsignore
+	excludesfile = ~/.cvsignore
 	editor = vim
 	autocrlf = input
 [help]
