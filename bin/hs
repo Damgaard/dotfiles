@@ -1,0 +1,36 @@
+#!/bin/bash
+#: Title          : hs
+#: Date           : 23 May 2014
+#: Author         : "Andreas Damgaard Pedersen"
+#: Version        : 1.0
+#: Description    : Starts appropriate HTTPServer. If started from a django
+#:                      project run using Django Development Server, else use
+#:                      SimpleHTTPServer.
+#: Options        : Port number. If not given, try starting the appropriate one
+#:                      by looking at the directory it was launched from.
+
+PORT="$1"
+
+if [ -e manage.py ]; then
+  echo "Djano project"
+  # . /home/andreas/keepcalm/restricted/virtualenv/bin/activate
+  if [ "$PORT" ]
+  then
+    python manage.py runserver "$PORT"
+  else
+    if [ "$PWD" = "$HOME"/iphone-site ] || [ "$PWD" = "/var/www-hosts/iphone-site" ]; then
+      python manage.py runserver 8081
+    elif [ "$PWD" = "$HOME"/keepcalm ] || [ "$PWD" = "/var/www-hosts/keepcalm" ]; then
+      python manage.py runserver 8091
+    elif [ "$PWD" = "$HOME"/filestorage ] || [ "$PWD" = "/var/www-hosts/filestorage" ]; then
+      python manage.py runserver 8099
+    else
+      python manage.py runserver 7000
+    fi
+  fi
+else
+  if [ "$PORT" = "" ]; then
+    PORT=8000
+  fi
+  python -m SimpleHTTPServer "$PORT"
+fi
