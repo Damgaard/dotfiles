@@ -110,6 +110,9 @@ fi
 # Custom changes
 ################
 
+# Inspiration from
+# - http://justinlilly.com/dotfiles/zsh.html
+
 # Color the prompt depending on what host we are on.
 # Lets make it absolutely clear when we are on Live
 # and needs to be super careful.
@@ -130,6 +133,14 @@ elif [[ $HOSTNAME = ocean* ]]; then
 else
   # Unknown. Yellow.
   PS1="\[$(tput bold 5)\]\[$(tput setaf 3)\]$PS1\[$(tput sgr0)\]"
+fi
+
+# Print a fortune at shell startup
+have_fortune=`which fortune`
+if [ -e have_fortune ]; then
+    echo ""
+    fortune
+    echo ""
 fi
 
 PATH=$PATH:~/dotfiles/bin/
