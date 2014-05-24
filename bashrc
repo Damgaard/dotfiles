@@ -159,6 +159,7 @@ alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm
 alias tk='python ~/keepcalm/manage.py test keepcalm'
 alias g='git'
 alias sw='sudo su - www-data --preserve-environment'
+alias pyclean='find . -name "*.pyc" -delete'
 
 # Convenient silent eclipse
 alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
