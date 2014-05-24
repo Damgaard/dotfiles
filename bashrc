@@ -137,15 +137,17 @@ PATH=$PATH:~/dotfiles/bin/
 # Add autojump
 source /usr/share/autojump/autojump.bash
 
-# Yeah I'm stupid.
+# Common typos
 alias æs='ls'
 alias sl='ls'
 alias ks='ls'
+alias pyhton='python'
 
 # Convenience commands
 alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm'
 alias tk='python ~/keepcalm/manage.py test keepcalm'
 alias g='git'
+alias sw='sudo su - www-data --preserve-environment'
 
 # Convenient silent eclipse
 alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
