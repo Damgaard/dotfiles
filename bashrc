@@ -110,6 +110,28 @@ fi
 # Custom changes
 ################
 
+# Color the prompt depending on what host we are on.
+# Lets make it absolutely clear when we are on Live
+# and needs to be super careful.
+
+HOSTNAME=`hostname`
+if [ "$HOSTNAME" = "ubuntu" ] || [ "$HOSTNAME" = "of-pc-3" ] ; then
+  # Local boxes. Blue
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 4)\]$PS1\[$(tput sgr0)\]"
+elif [[ $HOSTNAME = of* ]]; then
+  # Reincubate other office. Cyan
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 6)\]$PS1\[$(tput sgr0)\]"
+elif [[ $HOSTNAME = lo* ]] || [[ $HOSTNAME = nj* ]]; then
+  # Reincubate Live Boxes. Red.
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 1)\]$PS1\[$(tput sgr0)\]"
+elif [[ $HOSTNAME = ocean* ]]; then
+  # Personal Live boxes. Magenta
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 5)\]$PS1\[$(tput sgr0)\]"
+else
+  # Unknown. Yellow.
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 3)\]$PS1\[$(tput sgr0)\]"
+fi
+
 PATH=$PATH:~/dotfiles/bin/
 
 # Add autojump
