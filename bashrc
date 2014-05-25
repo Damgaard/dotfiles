@@ -90,15 +90,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -112,6 +103,22 @@ fi
 
 # Inspiration from
 # - http://justinlilly.com/dotfiles/zsh.html
+
+# Figure out where the dotfiles are located.
+# http://stackoverflow.com/a/246128
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DOT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Alias definitions.
+if [ -f "$DOT_DIR"/shell_aliases ]; then
+    . "$DOT_DIR"/shell_aliases
+fi
 
 # Color the prompt depending on what host we are on.
 # Lets make it absolutely clear when we are on Live
@@ -147,31 +154,6 @@ PATH=$PATH:~/dotfiles/bin/
 
 # Add autojump
 source /usr/share/autojump/autojump.bash
-
-# Common typos
-alias æs='ls'
-alias sl='ls'
-alias ks='ls'
-alias pyhton='python'
-
-# Convenience commands
-alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm'
-alias tk='python ~/keepcalm/manage.py test keepcalm'
-alias g='git'
-alias sw='sudo su - www-data --preserve-environment'
-alias pyclean='find . -name "*.pyc" -delete'
-
-# Convenient silent eclipse
-alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
-
-alias act="if [ -d virtualenv ]; then source virtualenv/bin/activate; elif [ -d restricted/virtualenv ]; then source restricted/virtualenv/bin/activate; else echo 'No virtualenv'; fi"
-alias deact="deactivate"
-
-alias ..='cd ..'
-alias ...='cd .../..'
-alias ....='cd ../../..'
-alias ....='cd ../../../..'
-alias .....='cd ../../../../..'
 
 # Run the
 PYTHONSTARTUP=~/.pythonrc.py
