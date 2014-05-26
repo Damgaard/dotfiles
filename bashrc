@@ -153,7 +153,9 @@ fi
 PATH=$PATH:~/dotfiles/bin/
 
 # Add autojump
-source /usr/share/autojump/autojump.bash
+if which autojump &> /dev/null; then
+  . /usr/share/autojump/autojump.bash
+fi
 
 # Run the
 PYTHONSTARTUP=~/.pythonrc.py
