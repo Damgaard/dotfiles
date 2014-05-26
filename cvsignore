@@ -6,8 +6,8 @@
 
 *.py[co]
 _build/
-build/
-dist/
+/build/
+/dist/
 *.egg
 *.egg-info/
 virtualenv/
