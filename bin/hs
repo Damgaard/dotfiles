@@ -12,8 +12,7 @@
 PORT="$1"
 
 if [ -e manage.py ]; then
-  echo "Djano project"
-  # . /home/andreas/keepcalm/restricted/virtualenv/bin/activate
+  . "$PWD"/restricted/virtualenv/bin/activate
   if [ "$PORT" ]
   then
     python manage.py runserver "$PORT"
