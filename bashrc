@@ -134,6 +134,9 @@ elif [[ $HOSTNAME = of* ]]; then
 elif [[ $HOSTNAME = lo* ]] || [[ $HOSTNAME = nj* ]]; then
   # Reincubate Live Boxes. Red.
   PS1="\[$(tput bold 5)\]\[$(tput setaf 1)\]$PS1\[$(tput sgr0)\]"
+elif [[ $HOSTNAME = letsgo* ]] || [[ $HOSTNAME = nj* ]]; then
+  # Letsgo Live Boxes. Red.
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 1)\]$PS1\[$(tput sgr0)\]"
 elif [[ $HOSTNAME = ocean* ]]; then
   # Personal Live boxes. Magenta
   PS1="\[$(tput bold 5)\]\[$(tput setaf 5)\]$PS1\[$(tput sgr0)\]"
