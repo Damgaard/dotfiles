@@ -29,10 +29,17 @@ docs/_build/
 *.swp
 *~
 
+# Certificates, keys and other secret stuff
+###########################################
+
+authentication.*
+*.crt
+*.csr
+*.key
+
 # Other #
 #########
 
 *.exe
-authentication.*
 .ropeproject/
 node_modules/
