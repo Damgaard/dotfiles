@@ -23,26 +23,30 @@ docs/_build/
 # Compiled C #
 ##############
 
-*.o
 *.hi
+*.o
 
 # Vim #
 #######
 
 *.swp
 *~
+.ropeproject/
 
-# Certificates, keys and other secret stuff
-###########################################
+# Certificates, keys and other secret stuff #
+#############################################
 
 authentication.*
 *.crt
 *.csr
 *.key
 
-# Other #
-#########
+# Binaries #
+############
 
 *.exe
-.ropeproject/
+
+# Libraries/depencies #
+#######################
+
 node_modules/
