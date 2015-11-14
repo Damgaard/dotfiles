@@ -18,14 +18,14 @@ set nocompatible
 
 let mapleader=","
 
-" Use pathogen to easily modify the runtime path to include all plugins under
-" the ~/vimfiles/bundle directory
+" Use pathogen to easily modify the runtime path to include all plugins
+" under the ~/vimfiles/bundle directory
 call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-" use utf8
+" Use utf8
 set encoding=utf-8
 
 " Activate mouse
@@ -60,7 +60,7 @@ set laststatus=2
 " Show the line we're currently on
 set cursorline
 
-" Allows vim to handle multiple buffers at the same time
+" Allow vim to handle multiple buffers at the same time
 set hidden
 
 " Visual autocomplete for command menu
@@ -73,7 +73,7 @@ set wildmenu
 " - http://dougblack.io/words/a-good-vimrc.html
 set lazyredraw
 
-" Add line number on left side.
+" Add line numbers on left side.
 set number
 
 " Show current git branch in statusline.
@@ -88,7 +88,7 @@ set scrolloff=5
 " Spelling {{{
 " ############
 
-" set spell
+" Toggle spelling
 nmap <silent> <leader>s :set spell!<CR>
 
 " }}}
@@ -135,8 +135,7 @@ set undodir=~/dotfiles/vimundo//,/var/tmp//,/tmp//,.
 " Disable backup files. Everything I edit is in version control.
 set noswapfile
 
-
-" keep visual selection after indenting
+" Keep visual selection after indenting
 vmap > >gv
 vmap < <gv
 
@@ -167,7 +166,7 @@ map <c-h> <c-w>h
 map j gj
 map k k
 
-" Disable arrowkeys
+" Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -203,7 +202,7 @@ set backspace=start,indent,eol
 " Correct auto-indentation for C and Python
 set cindent
 
-" Set colourcolumn for python (PEP8) and reStructed text files which are
+" Set colourcolumn for python (PEP8) and reStructured text files which are
 " mainly used for documenting python projects.
 autocmd BufNewFile,BufRead *.py,*.rst setlocal colorcolumn=80
 
@@ -238,12 +237,12 @@ cmap wQ wq
 cmap Q q
 cmap Tabnew tabnew
 
-" Autofix simple typos
+" Auto fix simple typos
 iabbrev teh the
 iabbrev Teh The
 iabbrev wiht with
 
-" Highligt extra whitespace
+" Highlight extra whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -255,7 +254,7 @@ autocmd BufWinLeave * call clearmatches()
 " Plugin Configuration {{{
 " ########################
 
-" quickly edit/reload the .vimrc file
+" Quickly edit/reload the .vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 

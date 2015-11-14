@@ -1,10 +1,14 @@
 # Typos
+#######
+
 alias æs='ls'
 alias sl='ls'
 alias ks='ls'
 alias pyhton='python'
 
 # Convenience commands
+######################
+
 alias vir='source ~/keepcalm/restricted/virtualenv/bin/activate && cd ~/keepcalm'
 alias tk='python ~/keepcalm/manage.py test keepcalm'
 alias g='git'
@@ -13,10 +17,18 @@ alias pyclean='find . -name "*.pyc" -delete'
 alias svim='sudo vim'
 
 # Convenient silent eclipse
+###########################
+
 alias eclipse='~/adt-bundle-linux-x86_64-20131030/eclipse/eclipse &> /dev/null &'
+
+# Activate virtualenv
+#####################
 
 alias act="if [ -d virtualenv ]; then source virtualenv/bin/activate; elif [ -d restricted/virtualenv ]; then source restricted/virtualenv/bin/activate; else echo 'No virtualenv'; fi"
 alias deact="deactivate"
+
+# Navigation
+############
 
 alias ..='cd ..'
 alias ...='cd ../..'
