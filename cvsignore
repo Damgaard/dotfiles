@@ -12,6 +12,9 @@ _build/
 *.egg-info/
 virtualenv/
 
+# py.test
+.cache
+
 # Sphinx Build docs #
 #####################
 
