@@ -1,23 +1,28 @@
 [user]
-	name = Andreas Damgaard Pedersen
 	email = andreas.damgaard.pedersen@gmail.com
+	name = Andreas Damgaard Pedersen
+
 [core]
-	excludesfile = ~/.cvsignore
-	editor = vim
 	autocrlf = input
+	editor = vim
+	excludesfile = ~/.cvsignore
+
 [help]
 	autocorrect = 1
+
 [pull]
     rebase = true
+
 [color]
 	ui = true
+
 [alias]
   a = add -up
   ds = diff --staged      # git ds - diff your staged changes == review before committing.
-  st = status -sb         # smarter status - include tag and branch info
   fup = log --since '1 day ago' --oneline --author # I know what you did yesterday - great for follow-ups
+  lmonth = log --since '30 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
   ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  # pretty one-line log with tags, branches and authors
   lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat    # a verbose ls, shows changed files too
-  sw = log --since '8 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last week
   s2w = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last two weeks ( since last all hands meeting
-  lmonth = log --since '30 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  st = status -sb         # smarter status - include tag and branch info
+  sw = log --since '8 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last week
