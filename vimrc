@@ -1,14 +1,7 @@
 " Vim Configuration file for
 "
 " Andreas Damgaard Pedersen
-"
-" --------------------------
-"
-" Inspiration taken from
-" - https://github.com/dougblack/dotfiles/blob/master/.vimrc
-" - https://github.com/spladug/dotfiles/blob/master/.vimrc
-"
-" And others, whose great dotfiles I've unfortunately forgotten to write down.
+" -------------------------
 
 " General Settings {{{
 " ####################
