@@ -36,6 +36,7 @@ Inspiration taken from
  - https://github.com/spladug/dotfiles
  - https://github.com/paulmillr/dotfiles
  - https://dotfiles.github.io/
+ - http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 
 And others, whose great dotfiles I've unfortunately forgotten to write down.
 
