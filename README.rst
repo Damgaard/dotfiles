@@ -31,6 +31,7 @@ Inspiration
 -----------
 
 Inspiration taken from
+
  - https://github.com/dougblack/dotfiles
  - https://github.com/spladug/dotfiles
  - https://github.com/paulmillr/dotfiles
