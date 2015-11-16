@@ -13,6 +13,14 @@ on the work and not on fighting the environment.
 To make this happen, I've put dotfiles into this repository which I then
 pull down on each relevant machine.
 
+Design
+------
+
+I use these dotfiles on production machines. For stability and reliability
+only absolutely neccessary packages and installed there. Therefore this repo
+only has bash and git as dependencies and install nothing from external
+sources.
+
 Setup
 -----
 
