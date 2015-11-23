@@ -4,6 +4,7 @@
 alias æs='ls'
 alias sl='ls'
 alias ks='ls'
+alias got='git'
 alias pyhton='python'
 
 # Convenience commands
