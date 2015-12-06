@@ -13,6 +13,11 @@ alias pyhton='python'
 alias g='git'
 alias pyclean='find . -name "*.pyc" -delete'
 
+# Programs always started with same arguments
+#############################################
+
+alias vim='vim -p'
+
 # Activate virtualenv
 #####################
 
