@@ -47,7 +47,7 @@ echo
 echo "Install python specific tools"
 echo "#############################"
 
-sudo apt-get install python-pip
+sudo apt-get install python-pip python-virtualenv
 
 echo
 echo "Intialize projects dir"
