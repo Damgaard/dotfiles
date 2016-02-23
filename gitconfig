@@ -22,7 +22,7 @@
 [alias]
   a = add -up
   ds = diff --staged      # git ds - diff your staged changes == review before committing.
-  fup = log --since '1 day ago' --oneline --author # I know what you did yesterday - great for follow-ups
+  f = log --since '1 week ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --author
   lmonth = log --since '30 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
   ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  # pretty one-line log with tags, branches and authors
   lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat    # a verbose ls, shows changed files too
