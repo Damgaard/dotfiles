@@ -29,7 +29,8 @@
   lmonth = log --since '30 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
   ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  # pretty one-line log with tags, branches and authors
   lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat    # a verbose ls, shows changed files too
-  s2w = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last two weeks ( since last all hands meeting
+  s2wm = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last two weeks ( since last all hands meeting
+  s2w = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author # What did a team member do since last staff meeting
   st = status -sb         # smarter status - include tag and branch info
   sw = log --since '8 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last week
   s2wa = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short -i --author
