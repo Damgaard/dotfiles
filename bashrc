@@ -140,6 +140,9 @@ elif [[ $HOSTNAME = letsgo* ]] || [[ $HOSTNAME = nj* ]]; then
 elif [[ $HOSTNAME = ocean* ]]; then
   # Personal Live boxes. Magenta
   PS1="\[$(tput bold 5)\]\[$(tput setaf 5)\]$PS1\[$(tput sgr0)\]"
+elif [[ $HOSTNAME = pi-* ]]; then
+  # Raspberry pi box. Magenta
+  PS1="\[$(tput bold 5)\]\[$(tput setaf 5)\]$PS1\[$(tput sgr0)\]"
 else
   # Unknown. Yellow.
   PS1="\[$(tput bold 5)\]\[$(tput setaf 3)\]$PS1\[$(tput sgr0)\]"
