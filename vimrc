@@ -203,8 +203,8 @@ autocmd BufNewFile,BufRead *.py,*.rst setlocal colorcolumn=80
 " Use gq on a visual selected number of lines
 autocmd BufNewFile,BufRead *.py setlocal tw=79
 
-" Tab should indent 2 spaces in html, jss or stylesheet files
-autocmd BufNewFile,BufRead *.html,*.js,*.css,*.scss,*.less setlocal tabstop=2 softtabstop=2 shiftwidth=2
+" Tab should indent 2 spaces in html, js, json or stylesheet files
+autocmd BufNewFile,BufRead *.html,*.js,*.css,*.scss,*.less,*.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " The unofficial style conventions for git commit messages are that headers
 " should be 50 chars or under, followed by an empty line and then a body
