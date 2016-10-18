@@ -100,3 +100,5 @@ PATH=$PATH:~/dotfiles/bin/
 # Run the
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
+
+. "$HOME"/Projects/dotfiles/shell_aliases
