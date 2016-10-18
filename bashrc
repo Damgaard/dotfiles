@@ -120,6 +120,11 @@ if [ -f "$DOT_DIR"/shell_aliases ]; then
     . "$DOT_DIR"/shell_aliases
 fi
 
+# Import exports
+if [ -f "$DOT_DIR"/exports ]; then
+    . "$DOT_DIR"/exports
+fi
+
 # Color the prompt depending on what host we are on.
 # Lets make it absolutely clear when we are on Live
 # and needs to be super careful.
