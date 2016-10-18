@@ -232,6 +232,7 @@ cmap WQ wq
 cmap wQ wq
 cmap Q q
 cmap Tabnew tabnew
+command! -nargs=? -bang -complete=file WQ wq<bang>
 
 " Auto fix simple typos
 iabbrev teh the
