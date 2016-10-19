@@ -19,6 +19,9 @@
 [color]
 	ui = true
 
+[rebase]
+	autostash = true
+
 [alias]
   a = add -up
   ds = diff --staged      # git ds - diff your staged changes == review before committing.
