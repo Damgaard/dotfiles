@@ -88,11 +88,8 @@ fi
 # be installed on most non-local machines, I'm simply going to use bash for them.
 
 # Print a fortune at shell startup
-have_fortune=`which fortune`
-if [ -e have_fortune ]; then
-    echo ""
-    fortune
-    echo ""
+if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
+    fortune | cowsay
 fi
 
 PATH=$PATH:~/dotfiles/bin/
