@@ -35,3 +35,12 @@
 
   sw = log --since '8 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short  --author 'andreas.damgaard.pedersen' # Work I did in the last week
   s2wa = log --since '15 day ago' --oneline --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short -i --author
+
+  # Super awesome blog entry on advanced git usage here.
+  # https://www.atlassian.com/blog/git/advanced-git-aliases
+
+  # Locally purge all merged branches
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+
+  # Purge all merged branches on remote
+  oclean = "!f() { git branch -r --merged | grep -v " ${1-master}$" |  sed 's/origin\\///' | xargs -n 1 git push --delete origin ; }; f"
