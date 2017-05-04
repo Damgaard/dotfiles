@@ -44,3 +44,6 @@
 
   # Purge all merged branches on remote
   oclean = "!f() { git branch -r --merged | grep -v " ${1-master}$" |  sed 's/origin\\///' | xargs -n 1 git push --delete origin ; }; f"
+
+  # Checkout date
+  date = "!f() { git checkout `git rev-list -n 1 --before="${1}" ${2-master}  ` ; } ; f"
