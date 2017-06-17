@@ -164,7 +164,3 @@ PATH=$PATH:~/dotfiles/bin/
 if which autojump &> /dev/null; then
   . /usr/share/autojump/autojump.bash
 fi
-
-# Run the
-PYTHONSTARTUP=~/.pythonrc.py
-export PYTHONSTARTUP
