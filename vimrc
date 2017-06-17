@@ -123,7 +123,7 @@ set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer relod
 " Store undo files in fixed location, not current directory.
 " http://stackoverflow.com/a/4331812/1368070
-set undodir=~/dotfiles/vimundo//,/var/tmp//,/tmp//,.
+set undodir=~/Projects/dotfiles/vimundo//,/tmp/vimundo/
 
 " Disable backup files. Everything I edit is in version control.
 set noswapfile
