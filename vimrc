@@ -280,6 +280,9 @@ map <leader>r :RopeRename<CR>
 set wildignore+=*.o,*.obj,*.bak,*.exe,*~,*.png,*.PNG,*.jpg,*.JPG,*.gif,*.GIF
 set wildignore+=*.hi,*.pdf,*.aux
 
+" Ansible retry files
+set wildignore+=*.retry
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt) & Ben Orenstein
