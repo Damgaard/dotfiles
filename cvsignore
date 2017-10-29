@@ -33,14 +33,6 @@ docs/_build/
 *~
 .ropeproject/
 
-# Certificates, keys and other secret stuff #
-#############################################
-
-authentication.*
-*.crt
-*.csr
-*.key
-
 # Binaries #
 ############
 
