@@ -16,6 +16,9 @@
 [pull]
     rebase = true
 
+[merge]
+    rebase = true
+
 [color]
 	ui = true
 
