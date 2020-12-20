@@ -11,10 +11,6 @@ set nocompatible
 
 let mapleader=","
 
-" Use pathogen to easily modify the runtime path to include all plugins
-" under the ~/vimfiles/bundle directory
-call pathogen#infect()
-call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
