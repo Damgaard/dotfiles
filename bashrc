@@ -176,3 +176,12 @@ fi
 
 PATH=$PATH:~/dotfiles/bin/
 
+# Rootless docker configuration
+export PATH=/home/andreas/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+export NVM_DIR="/home/andreas/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Start docker
+systemctl --user start docker
