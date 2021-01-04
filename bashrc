@@ -176,7 +176,3 @@ fi
 
 PATH=$PATH:~/dotfiles/bin/
 
-# Add autojump
-if which autojump &> /dev/null; then
-  . /usr/share/autojump/autojump.bash
-fi
