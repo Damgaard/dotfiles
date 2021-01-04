@@ -34,3 +34,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ....='cd ../../../..'
 alias .....='cd ../../../../..'
+
+# Start VPN
+###########
+
+alias vpn='cd /home/andreas/.vpn/ && sudo openvpn client.ovpn'
