@@ -17,8 +17,8 @@ Design
 ------
 
 I use these dotfiles on production machines. For stability and reliability
-only absolutely neccessary packages and installed there. Therefore this repo
-only has bash and git as dependencies and install nothing from external
+only absolutely necessary packages are installed there. Therefore this repo
+only has bash and git as dependencies and installs nothing from external
 sources.
 
 Setup
@@ -45,5 +45,4 @@ Systems
 -------
 
 I currently only work in Ubuntu environments of version 12.04 or higher. Since
-I don't work on other Operating systems, it may or may not work on other
-systems.
+I don't work on other operating systems, it may or may not work on other systems.
