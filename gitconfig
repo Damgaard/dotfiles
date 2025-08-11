@@ -50,3 +50,10 @@
 
 	# Checkout date
 	date = "!f() { git checkout `git rev-list -n 1 --before=\"${1}\" ${2-master}  ` ; } ; f"
+
+# Explictly set usage of modern version
+[index]
+    version = 4
+
+[protocol]
+    version = 2
